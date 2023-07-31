@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: rgb(25, 27, 60);
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles{
+    position: relative;
+    display: flex;
+}
+
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: rgb(159, 91, 91);
+    margin: 0 4px;
+    border-radius:50%;
+    box-shadow: 0 0 0 10px rgb(47, 45, 84),
+    0 0 50px rgb(40, 107, 107),
+    0 0 100px rgb(46, 89, 89);
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s/var(--i));
+    background-size: cover;
+    /* background-size: 100% 100%; */
+
+}
+
+.bubbles span:nth-child(even){
+    background: blue;
+    box-shadow: 0 0 0 10px rgb(47, 45, 84),
+    0 0 50px red,
+    0 0 100px red;
+    background-size: cover;
+    /* background-size: 100% 100%; */
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+#name{
+    position: relative;
+    top: 30%;
+    left: 100%;
+    transform: translateX(-65%);
+    display: flex;
+    flex-direction: row;
+}
+
+#input{
+    width: 30vw;
+    height: 4vw;
+    background: transparent;
+    border-radius: 12px;
+    border: 3px double blue;
+    box-shadow: 0 0 0 10px rgb(47, 45, 84),
+    0 0 50px red,
+    0 0 100px rgb(13, 0, 255);
+}
+
+::placeholder{
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-family:cursive;
+}
+
+input[type="text"] {
+    color: wheat; 
+    font-size: 2rem;
+    font-family:cursive
+}
+
+#submit{
+    margin-left: 10px;
+    height: 43px;
+    background: transparent;
+    width: 12vw;
+    color: white;
+    border-radius: 12px;
+}
+
+#wish{
+    font-size: 4rem;
+    color: wheat;
+    font-family: cursive;
+    position: relative;
+    top: 50%;
+    left: 10%;
+    animation: toggle 15s linear infinite;
+    display: block;
+    width: fit-content;
+}
+
+@keyframes toggle {
+    0%{
+        transform: rotate(-10deg);
+    }
+    25%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+@media (max-width:1300px){
+    #wish{
+        font-size: 3.5rem;
+    }
+    #input{
+        width: 35vw;
+    }
+}
+
+@media (max-width:1175px){
+    #wish{
+        font-size: 3rem;
+    }
+    #input{
+        width: 37vw;
+    }
+    .bubbles span{
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width:995px){
+    #wish{
+        font-size: 3rem;
+        left: 0;
+    }
+    #name{
+        width: max-content;
+        left: 50%;
+    }
+    #submit{
+        width: 15vw;
+    }
+
+}
+
+
+@media (max-width:900px){
+    #wish{
+        font-size: 2.5rem;
+    }
+    #input{
+        height: 6vw;
+        width: 40vw;
+    }
+    input[type="text"] {
+        font-size: 1.5rem;
+    }
+    ::placeholder{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:740px){
+    .bubbles span{
+        width: 20px;
+        height: 20px;
+    }
+    #wish{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width:600px){
+    .bubbles span{
+        width: 15px;
+        height: 15px;
+    }
+    #wish{
+        font-size: 1.7rem;
+    }
+    input[type="text"] {
+        font-size: 1.2rem;
+    }
+    ::placeholder{
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width:500px){
+    .bubbles span{
+        width: 10px;
+        height: 10px;
+    }
+    #wish{
+        font-size: 1.5rem;
+    }
+    #input{
+        width: 45vw;
+        height: 8vw;
+    }
+    #submit{
+        width: 18vw;
+        height: 30px;
+    }
+    #name{
+        left: 50%;
+    }
+}
+
+@media (max-width:405px){
+    #wish{
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width:365px) {
+    #wish{
+        font-size: 1.2rem;
+    }
+}
